@@ -1,0 +1,14 @@
+What challenges did you encounter with this assignment, if any? 
+ -One challenge I encountered is that I could not re-run my code from the terminal by pressing the up arrow to get the command. I needed to click the run button on the menu bar for VSCode.
+ -I at first could not figure out why my tests were failing for the right triangle, but then I realized I had to move the right triangle test case above scalene because right triangles are scalene triangles.
+
+What did you think about the requirements specification for this assignment?
+-I think that the requirements section was clear
+
+What challenges did you encounter with the tools?
+-I didn't like that the test cases did not print out what the result was from the code, so I had to figure out how to view it in order to debug.
+
+Describe the criteria you used to determine that you had sufficient test cases, i.e. how did you know you were done?
+-Criteria I used was that I tested each type of triangle several times with inputs I knew to be correct, as well as inputs I knew to be wrong. I also tested any incoreect inputs such as a negative length or a 0 length.
+-For right triangles I tested multiple types of right triangles but also every combination of orders for 3,4,5 to see if the math would always check out no matter the order. I did a similar type of test for Isoceles.
+-I knew I was done when I couldn't think of another possible input and when all the tests ran successfully.

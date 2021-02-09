@@ -45,8 +45,14 @@ class TestTriangles(unittest.TestCase):
  
     def testSet1(self): #tests right triangles
         self.assertEqual(classifyTriangle(3,4,5),'Right','3,4,5 is a Right triangle')
+        self.assertEqual(classifyTriangle(4,3,5),'Right','3,4,5 is a Right triangle')
+        self.assertEqual(classifyTriangle(3,5,4),'Right','3,4,5 is a Right triangle')
+        self.assertEqual(classifyTriangle(5,3,4),'Right','3,4,5 is a Right triangle')
+        self.assertEqual(classifyTriangle(4,5,3),'Right','3,4,5 is a Right triangle')
+        self.assertEqual(classifyTriangle(5,4,3),'Right','3,4,5 is a Right triangle')
         self.assertEqual(classifyTriangle(13,5,12),'Right','5,12,13 is a Right triangle')
         self.assertEqual(classifyTriangle(15,17,8),'Right','8,15,17 is a Right triangle')
+        self.assertNotEqual(classifyTriangle(1,1,1),'Right','1,1,1 is an Equilteral triangle')
                 
     def testMyTestSet2(self): #tests scalene triangles that are not right triangles
         self.assertEqual(classifyTriangle(1,2,3),'Scalene','1,2,3 Should be Scalene')
@@ -58,11 +64,15 @@ class TestTriangles(unittest.TestCase):
         self.assertEqual(classifyTriangle(1,1,1),'Equilateral','1,1,1 Should be equilateral')
         self.assertEqual(classifyTriangle(2,2,2),'Equilateral','2,2,2 Should be Equilateral')
         self.assertEqual(classifyTriangle(3,3,3),'Equilateral','3,3,3 Should be Equilateral')
+        self.assertNotEqual(classifyTriangle(0,0,0),'Equilateral','3,3,3 Should be NotATriangle')
 
     def testMyTestSet4(self): #tests isoceles triangles that are not right triangles
-        self.assertEqual(classifyTriangle(1,1,2),'Isoceles','1,1,2 Should be Equilateral')
-        self.assertEqual(classifyTriangle(22,23,22),'Isoceles','22,23,22 Should be Equilateral')
-        self.assertEqual(classifyTriangle(13,13,3),'Isoceles','13,13,3 Should be Equilateral')
+        self.assertEqual(classifyTriangle(1,1,2),'Isoceles','1,1,2 Should be Isoceles')
+        self.assertEqual(classifyTriangle(1,2,1),'Isoceles','1,1,2 Should be Isoceles')
+        self.assertEqual(classifyTriangle(2,1,1),'Isoceles','1,1,2 Should be Isoceles')
+        self.assertEqual(classifyTriangle(22,23,22),'Isoceles','22,23,22 Should be Isoceles')
+        self.assertEqual(classifyTriangle(13,13,3),'Isoceles','13,13,3 Should be Isoceles')
+        self.assertNotEqual(classifyTriangle(12,13,3),'Isoceles','12,13,3 Scalene')
 
     def testMyTestSet5(self): #tests incorrect inputs
         self.assertEqual(classifyTriangle(0,1,2),'NotATriangle', '0,1,2 Should be NotATriangle')
